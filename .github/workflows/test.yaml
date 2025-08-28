@@ -1,0 +1,35 @@
+name: Ecommerce Test Automation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Ecommerce Tests
+        run: npm test
+        env:
+          TARGET_URL: https://suta.in/products/laal-chumki-ready-to-wear
+          TIMEOUT: 30000
+
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: report.json
