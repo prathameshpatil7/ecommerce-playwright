@@ -37,4 +37,4 @@ Edit `config.js` or use environment variables:
 | Meta title & description           | ✅ Done            |
 | Console/network/resource errors    | ✅ Done            |
 | JSON Report                        | ✅ Done            |
-| Cloud-ready (CI/CD)                | ✅ CI script ready |
+| Cloud-ready (CI/CD)                | ✅ DONE            |
